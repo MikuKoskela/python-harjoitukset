@@ -2,13 +2,16 @@
 # joka kysyy käyttäjältä kokonaisluvun ja ilmoittaa,
 # onko se alkuluku. Alkulukuja ovat luvut,
 # jotka ovat jaollisia vain ykkösellä ja itsellään.
-kokonaisluku = int(input("anna kokonaisluku: "))
-
-for i in range(2,kokonaisluku//2+1):
-
-    if (kokonaisluku % i) == 0:
+kokonaisluku = int(input("Anna kokonaisluku: "))
+eiAlkuluku = False
+for i in range(2,kokonaisluku):
+    luku = kokonaisluku % i
+    if luku == 0:
         print("Luku ei ole alkuluku")
+        eiAlkuluku = True
         break
-    elif (kokonaisluku % i) == 1:
-        print("luku on alkuluku")
-        break
+
+if eiAlkuluku:
+    print("Luku ei ole alkuluku")
+else:
+    print("Luku on alkuluku")
